@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 1 - Getting Started</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -28,39 +28,89 @@
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 1 - Getting Started</h1>
+
+			<nav>
+				<ul>
+					<li id="home-tab"><a href="../index.html">Home</a></li>
+					<li id="exp-1-tab"><a href="../experiment1/index.html">Experiment 1</a></li>
+					<li id="exp-2-tab"><a href="../experiment2/index.html">Experiment 2</a></li>
+				</ul>
+			</nav>	
+
 			<div class="minor-section">
 				<h2>Imitate</h2>
-				<p>To develop artistic creativity in coding, it can be helpful to start by studying and learning from existing examples. This might involve reviewing code written by others, analyzing successful techniques, or even copying and modifying code to better understand how it works. By imitating and learning from existing techniques and strategies, we can gain a better understanding of what has been done before and what is possible, and identify opportunities for improvement and innovation.</p>
-				<p>What code did you start with? (You don't need to provide the code itself, but where did you start?) Document this step briefly.</p>
+				<p>I took the code provided by the tutorial repostiory and made some changes to help fix up my website.</p>
+				<p>I still got lots to edit but I feel like this is a good start for setting up my website.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Integrate</h2>
-				<p>After learning from existing techniques and strategies, we can build upon that foundation by combining elements from different sources. This might involve combining elements from different programming languages, using libraries or frameworks in new ways, or bringing together techniques from different fields or disciplines. By integrating and combining elements from different sources, we can create something new and unique.</p>
-				<p>How did you extend the code or combine with another technique to make something new? Document this step.</p>
+				<p>I decided to use VSCode and Github Desktop for this assignment.</p>
+				<p>While I didn't use any new techniques, I feel that I utilized the programs well to fulfill the requirements of the assignment.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Innovate</h2>
-				<p>Finally, we can introduce new or original ideas to our coding process by thinking creatively and pushing the boundaries. This might involve developing entirely new techniques or approaches, or using existing techniques in new and creative ways. By innovating and introducing new ideas, we can create art that is truly groundbreaking.</p>
-				<p>How did you use the code as a jumping off point to create something truly unique and novel? Document this step thoroughly.</p>
+				<p>I included a toolbar for the different tabs for the different pages available on the website.</p>
+				<p>I look forward to showcasing what I learn from this class and having it easily navigated by using this tab bar.</p>
 			</div>
 
 			<div class="minor-section"> 
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment. Here's where you can put your reflections.</p>
-				<ul>
-					<li>What part of the project you contributed</li>
-					<li>A reflection on your work and the work of the team</li>
-					<li>Brief highs and lows</li>
-				</ul>
+				<p>I think I did a good job. I could've worked on the website more but I feel this satifies the objectives of the assignment.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Results</h2>
 				<div id="canvas-container">
-					<!-- canvas will be added here -->
+					<script>
+						let angle = 0;
+						let tailAngle = 0;
+						let legAngle = 0;
+					
+						function setup() {
+						  createCanvas(600, 400, WEBGL);
+						}
+					
+						function draw() {
+						  background(200);
+					
+						  // Body
+						  box(100, 70, 50);
+					
+						  // Head
+						  push();
+						  translate(0, -50, 0);
+						  rotateY(angle * 2);
+						  sphere(40);
+						  pop();
+					
+						  // Legs
+						  drawLeg(-30, 30, legAngle);
+						  drawLeg(30, 30, -legAngle);
+					
+						  // Tail
+						  push();
+						  translate(-70, 10, 0);
+						  rotateZ(HALF_PI / 2 + tailAngle);
+						  cylinder(10, 100);
+						  pop();
+					
+						  // Animation
+						  angle += 0.02;
+						  tailAngle = sin(angle) * PI / 4; // Simulates wagging
+						  legAngle = sin(angle * 2) * PI / 8; // Simulates walking animation
+						}
+					
+						function drawLeg(x, y, rotation) {
+						  push();
+						  translate(x, y, 0);
+						  rotateZ(rotation);
+						  box(20, 20, 60);
+						  pop();
+						}
+					  </script>
 				</div>
 			</div>
 		</section>
