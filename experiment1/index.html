@@ -64,53 +64,7 @@
 			<div class="minor-section">
 				<h2>Results</h2>
 				<div id="canvas-container">
-					<script>
-						let angle = 0;
-						let tailAngle = 0;
-						let legAngle = 0;
-					
-						function setup() {
-						  createCanvas(600, 400, WEBGL);
-						}
-					
-						function draw() {
-						  background(200);
-					
-						  // Body
-						  box(100, 70, 50);
-					
-						  // Head
-						  push();
-						  translate(0, -50, 0);
-						  rotateY(angle * 2);
-						  sphere(40);
-						  pop();
-					
-						  // Legs
-						  drawLeg(-30, 30, legAngle);
-						  drawLeg(30, 30, -legAngle);
-					
-						  // Tail
-						  push();
-						  translate(-70, 10, 0);
-						  rotateZ(HALF_PI / 2 + tailAngle);
-						  cylinder(10, 100);
-						  pop();
-					
-						  // Animation
-						  angle += 0.02;
-						  tailAngle = sin(angle) * PI / 4; // Simulates wagging
-						  legAngle = sin(angle * 2) * PI / 8; // Simulates walking animation
-						}
-					
-						function drawLeg(x, y, rotation) {
-						  push();
-						  translate(x, y, 0);
-						  rotateZ(rotation);
-						  box(20, 20, 60);
-						  pop();
-						}
-					  </script>
+				<script></script>
 				</div>
 			</div>
 		</section>
