@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 3 - Generative Methods</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -13,10 +13,23 @@
 	<link rel="stylesheet" type="text/css" href="../css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+
+    <!-- Generative Design Dependencies here -->
+    <!-- GG Bundled -->
+    <script src="https://cdn.jsdelivr.net/gh/generative-design/Code-Package-p5.js@master/libraries/gg-dep-bundle/gg-dep-bundle.js"></script>
+    <!-- Opentype -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/opentype.js/0.7.3/opentype.min.js"></script>
+    <!-- Rita -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rita/1.3.11/rita-small.min.js"></script>
+    <!-- Chroma -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.6/chroma.min.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
 
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
 	<!-- Use me for a JavaScript OOP Project -->
@@ -28,33 +41,42 @@
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Generative Methods</h1>
+
+			<nav>
+				<ul>
+					<li id="home-tab"><a href="../index.html">Home</a></li>
+					<li id="exp-1-tab"><a href="../experiment1/index.html">Experiment 1</a></li>
+					<li id="exp-2-tab"><a href="../experiment2/index.html">Experiment 2</a></li>
+					<li id="exp-3-tab"><a href="../experiment3/index.html">Experiment 3</a></li>
+					<li id="exp-4-tab"><a href="../experiment4/index.html">Experiment 4</a></li>
+					<li id="exp-5-tab"><a href="../experiment5/index.html">Experiment 5</a></li>
+					<li id="exp-6-tab"><a href="../experiment6/index.html">Experiment 6</a></li>
+				</ul>
+			</nav>	
+			
 			<div class="minor-section">
 				<h2>Imitate</h2>
-				<p>To develop artistic creativity in coding, it can be helpful to start by studying and learning from existing examples. This might involve reviewing code written by others, analyzing successful techniques, or even copying and modifying code to better understand how it works. By imitating and learning from existing techniques and strategies, we can gain a better understanding of what has been done before and what is possible, and identify opportunities for improvement and innovation.</p>
-				<p>What code did you start with? (You don't need to provide the code itself, but where did you start?) Document this step briefly.</p>
+				<p>I started this assignment by looking through examples of general design by using <a style = "color: black;" href = "http://www.generative-gestaltung.de/2/">this link</a> and I found an example I really liked.</p>
+				<p>Originally I ended up finding <a style = "color: black;" href = "https://editor.p5js.org/generative-design/sketches/M_1_5_02">this example</a> to edit and I made <a style = "color: black;" href = "https://editor.p5js.org/quinngamedevelopment/sketches/hwu6BPCV3">this.</a></p>
+				<p>Unfortunately I was not able to add said program to my site so I opted to using <a style = "color: black;" href = "http://www.generative-gestaltung.de/2/sketches/?02_M/M_1_4_01">this example</a> as the base of my project.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Integrate</h2>
-				<p>After learning from existing techniques and strategies, we can build upon that foundation by combining elements from different sources. This might involve combining elements from different programming languages, using libraries or frameworks in new ways, or bringing together techniques from different fields or disciplines. By integrating and combining elements from different sources, we can create something new and unique.</p>
-				<p>How did you extend the code or combine with another technique to make something new? Document this step.</p>
+				<p>Originally I attempted integrating the stroke lines animation but despite implementing the agent script and the other references the program used, I couldn't get the program functional on my website.</p>
+				<p>Now, I ended up working with this nice noise terrain and I thought of some ideas on what I can do with it. You can rotate it using right click and changing the "vibrations" using left click. It was then that I thought of the concept of a visualizer that you'd see in music videos.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Innovate</h2>
-				<p>Finally, we can introduce new or original ideas to our coding process by thinking creatively and pushing the boundaries. This might involve developing entirely new techniques or approaches, or using existing techniques in new and creative ways. By innovating and introducing new ideas, we can create art that is truly groundbreaking.</p>
-				<p>How did you use the code as a jumping off point to create something truly unique and novel? Document this step thoroughly.</p>
+				<p>I got inspired to make it into a visualizer and what I did first was rotate it upside down and setup it into canvas.</p>
+				<p>Afterwards, I decided to give it a rainbow animation that's constantly looping and finally made it into the shape of a ring. This helped give off the visualizer feeling while also making it rotatable to change the perspective on what it looks like.</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment. Here's where you can put your reflections.</p>
-				<ul>
-					<li>What part of the project you contributed</li>
-					<li>A reflection on your work and the work of the team</li>
-					<li>Brief highs and lows</li>
-				</ul>
+				<p>I was able to accomplish what I wanted to achieve. While I would need to add sound and make it change based off sound waves in order to make it into an actual visualizer, I believe this achieved what I wanted to do within the scope of this project. Plus, I am potentially planning to make some visualizers for the group project so I may revisit this code then!</p>
 			</div>
 
 			<div class="minor-section">
