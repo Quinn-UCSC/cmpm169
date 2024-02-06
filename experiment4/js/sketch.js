@@ -2,66 +2,53 @@
 // Author: Your Name
 // Date:
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
+var video;
+var vScale = 16;
+var hueValue = 0; // Initialize hue value
 
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-const VALUE1 = 1;
-const VALUE2 = 2;
-
-// Globals
-let myInstance;
-let canvasContainer;
-
-class MyClass {
-    constructor(param1, param2) {
-        this.property1 = param1;
-        this.property2 = param2;
-    }
-
-    myMethod() {
-        // code to run when method is called
-    }
-}
-
-// setup() function is called once when the program starts
 function setup() {
-    // place our canvas, making it fit our container
-    canvasContainer = $("#canvas-container");
-    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-    canvas.parent("canvas-container");
-    // resize canvas is the page is resized
-    $(window).resize(function() {
-        console.log("Resizing...");
-        resizeCanvas(canvasContainer.width(), canvasContainer.height());
-    });
-    // create an instance of the class
-    myInstance = new MyClass(VALUE1, VALUE2);
+  // place our canvas, making it fit our container
+  canvasContainer = $("#canvas-container");
+  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+  canvas.parent("canvas-container");
+  // resize canvas when the page is resized
+  $(window).resize(function() {
+      console.log("Resizing...");
+      resizeCanvas(canvasContainer.width(), canvasContainer.height());
+  });	
 
-    var centerHorz = windowWidth / 2;
-    var centerVert = windowHeight / 2;
+  pixelDensity(1);
+  video = createCapture(VIDEO);
+  video.size(width / vScale, height / vScale);
+  colorMode(HSB, 360, 150, 100); // Set color mode to HSB
 }
 
-// draw() function is called repeatedly, it's the main animation loop
 function draw() {
-    background(220);    
-    // call a method on the instance
-    myInstance.myMethod();
-
-    // Put drawings here
-    var centerHorz = canvasContainer.width() / 2 - 125;
-    var centerVert = canvasContainer.height() / 2 - 125;
-    fill(234, 31, 81);
-    noStroke();
-    rect(centerHorz, centerVert, 250, 250);
-    fill(255);
-    textStyle(BOLD);
-    textSize(140);
-    text("p5*", centerHorz + 10, centerVert + 200);
+  background(50);
+  video.loadPixels();
+  for (var y = 0; y < video.height; y++) {
+    for (var x = 0; x < video.width; x++) {
+      var index = (video.width - x + 1 + (y * video.width)) * 4;
+      var r = video.pixels[index + 1];
+      var g = video.pixels[index + 2];
+      var b = video.pixels[index + 3];
+      var bright = (r + g + b) / 3;
+      var w = map(bright, 0, 255, 0, vScale);
+      noStroke();
+      fill((hueValue + bright) % 360, 100, 100); // Set fill color to HSB with calculated hue
+      rectMode(CENTER);
+      rect(x * vScale, y * vScale, w, w);
+    }
+  }
 }
 
-// mousePressed() function is called once after every time a mouse button is pressed
-function mousePressed() {
-    // code to run when mouse is pressed
+// Function to handle key presses
+function keyPressed() {
+  if (key === '1') {
+    hueValue = 0; // Blues to Greens
+  } else if (key === '2') {
+    hueValue = 120; // Reds to Purples
+  } else if (key === '3') {
+    hueValue = 240; // Greens to Purples
+  }
 }
